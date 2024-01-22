@@ -15,12 +15,12 @@ class Settings(BaseSettings):
 
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
-<<<<<<< HEAD
+
         await init_beanie(database=client.get_default_database(), document_models=[Event, User])
-=======
+
         await init_beanie(database=client.get_default_database(),
                           document_models=[User, Event])
->>>>>>> 548159bc526c643be0425997169c499c050140ba
+
 
     class Config:
         env_file = ".env"
@@ -68,7 +68,7 @@ class Database:
         await doc.delete()
         return True
     
-<<<<<<< HEAD
+
      # update with params json
     async def update_withjson(self, id: PydanticObjectId, body: json):
         doc_id = id
@@ -81,13 +81,13 @@ class Database:
             return False
         await doc.update(update_query)
         return doc 
-=======
+
     # 저장
     async def save(self, document) -> None:
         doc = await document.create()
         return doc
      
->>>>>>> 548159bc526c643be0425997169c499c050140ba
+
     # column 값으로 여러 Documents 가져오기
     async def getsbyconditions(self, conditions:dict) -> [Any]:
         documents = await self.model.find(conditions).to_list()  # find({})
@@ -106,9 +106,7 @@ class Database:
             return documents, pagination
         return False    
 
-<<<<<<< HEAD
 
-=======
     async def delete(self, id: PydanticObjectId):
         doc = await self.get(id)
         if not doc:
@@ -129,7 +127,7 @@ class Database:
         await doc.update(update_query)
         return doc    
     
->>>>>>> 548159bc526c643be0425997169c499c050140ba
+
 if __name__ == '__main__':
     settings = Settings()
     async def init_db():

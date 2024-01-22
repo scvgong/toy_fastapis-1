@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from typing import List
 
 from beanie import PydanticObjectId
@@ -71,7 +70,7 @@ async def update_event_withjson(id: PydanticObjectId, request:Request) -> Event:
 async def retrieve_all_events() -> dict:
     events = await event_database.get_all()
     return {"total_count":len(events),'datas':events}
-=======
+
 from typing import List
 
 from beanie import PydanticObjectId
@@ -155,4 +154,4 @@ async def retrieve_all_events() -> dict:
     events = await event_database.get_all()
     return {"total_count":len(events)
             , 'datas':events}
->>>>>>> 548159bc526c643be0425997169c499c050140ba
+

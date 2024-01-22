@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from typing import Optional, List
 
 from beanie import Document
@@ -16,7 +16,6 @@ class Event(Document):
     class Settings:
         name = "events"
 
-=======
 from typing import Optional, List
 
 from beanie import Document
@@ -33,4 +32,3 @@ class Event(Document):
 
     class Settings:
         name = "events"
->>>>>>> 548159bc526c643be0425997169c499c050140ba

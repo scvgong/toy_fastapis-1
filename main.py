@@ -12,10 +12,7 @@ from routes.positionings import router as second_router
 from routes.users import router as users_router
 from routes.homes import router as home_router
 from routes.events_api import router as events_api_router
-<<<<<<< HEAD
 from routes.users_api import router as users_api_router
-=======
->>>>>>> 548159bc526c643be0425997169c499c050140ba
 
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
@@ -24,11 +21,7 @@ app.include_router(second_router, prefix="/positioning")
 app.include_router(users_router, prefix="/users")
 app.include_router(home_router, prefix="/home")
 app.include_router(events_api_router, prefix="/events_api")
-<<<<<<< HEAD
 app.include_router(users_api_router, prefix="/users_api")
-=======
->>>>>>> 548159bc526c643be0425997169c499c050140ba
-
 
 
 # html 들이 있는 폴더 위치
@@ -46,13 +39,11 @@ app.add_middleware(
 
 from fastapi.staticfiles import StaticFiles
 # url 경로, 자원 물리 경로, 프로그램밍 측면
-<<<<<<< HEAD
 app.mount("/css", StaticFiles(directory="resources/css"), name="static_css")
 app.mount("/images", StaticFiles(directory="resources/images"), name="static_images")
-=======
+
 app.mount("/css", StaticFiles(directory="resources\\css\\"), name="static_css")
 # app.mount("/images", StaticFiles(directory="resources\\images\\"), name="static_images")
->>>>>>> 548159bc526c643be0425997169c499c050140ba
 
 @app.get("/")
 async def root(request:Request):
